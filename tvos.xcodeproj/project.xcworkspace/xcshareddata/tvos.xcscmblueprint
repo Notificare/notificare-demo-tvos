@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3B79E1EAFF3120EC72E2E4BC4BB2BE058CD4CC71",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A8AB84BB8C7F737607E8245C0F749173E360FC8E" : 9223372036854775807,
+    "3B79E1EAFF3120EC72E2E4BC4BB2BE058CD4CC71" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0A74CB3B-A4D3-4B13-94F6-42317352CA1B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A8AB84BB8C7F737607E8245C0F749173E360FC8E" : "notificare-demo-tvos\/tvos\/notificare-push-lib-tvos-1.0.0\/",
+    "3B79E1EAFF3120EC72E2E4BC4BB2BE058CD4CC71" : "notificare-demo-tvos\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "tvos",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "tvos.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Notificare\/notificare-demo-tvos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3B79E1EAFF3120EC72E2E4BC4BB2BE058CD4CC71"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Notificare\/notificare-push-lib-tvos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A8AB84BB8C7F737607E8245C0F749173E360FC8E"
+    }
+  ]
+}
