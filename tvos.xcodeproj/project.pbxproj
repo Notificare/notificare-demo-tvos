@@ -12,6 +12,7 @@
 		5D2ABEE41D9B4AC100A3D896 /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDC1D9B4AC100A3D896 /* Notificare.plist */; };
 		5D2ABEE51D9B4AC100A3D896 /* NotificareManagedModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDD1D9B4AC100A3D896 /* NotificareManagedModels.bundle */; };
 		5D2ABEE61D9B4AC100A3D896 /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDE1D9B4AC100A3D896 /* NotificareTags.plist */; };
+		5D2ABEE91D9BC74E00A3D896 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */; };
 		5DA033B31D9A0B6F0045F82A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B21D9A0B6F0045F82A /* main.m */; };
 		5DA033B61D9A0B6F0045F82A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B51D9A0B6F0045F82A /* AppDelegate.m */; };
 		5DA033B91D9A0B6F0045F82A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B81D9A0B6F0045F82A /* ViewController.m */; };
@@ -32,7 +33,6 @@
 		5DA0347B1D9A0C900045F82A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0347A1D9A0C900045F82A /* Security.framework */; };
 		5DA0347D1D9A0C960045F82A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0347C1D9A0C960045F82A /* CFNetwork.framework */; };
 		5DA0347F1D9A0C9B0045F82A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0347E1D9A0C9B0045F82A /* ImageIO.framework */; };
-		5DA034811D9A0CA10045F82A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA034801D9A0CA10045F82A /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +119,8 @@
 		5D2ABEDC1D9B4AC100A3D896 /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
 		5D2ABEDD1D9B4AC100A3D896 /* NotificareManagedModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NotificareManagedModels.bundle; sourceTree = "<group>"; };
 		5D2ABEDE1D9B4AC100A3D896 /* NotificareTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareTags.plist; sourceTree = "<group>"; };
+		5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5D2ABEEA1D9BC75700A3D896 /* tvos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvos.entitlements; sourceTree = "<group>"; };
 		5DA033AE1D9A0B6F0045F82A /* tvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA033B21D9A0B6F0045F82A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA033B41D9A0B6F0045F82A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,7 +149,6 @@
 		5DA0347A1D9A0C900045F82A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5DA0347C1D9A0C960045F82A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5DA0347E1D9A0C9B0045F82A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		5DA034801D9A0CA10045F82A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +156,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DA034811D9A0CA10045F82A /* StoreKit.framework in Frameworks */,
 				5DA0347F1D9A0C9B0045F82A /* ImageIO.framework in Frameworks */,
 				5DA0347D1D9A0C960045F82A /* CFNetwork.framework in Frameworks */,
 				5DA0347B1D9A0C900045F82A /* Security.framework in Frameworks */,
@@ -168,6 +168,7 @@
 				5DA0346D1D9A0C500045F82A /* MobileCoreServices.framework in Frameworks */,
 				5DA0346B1D9A0C4A0045F82A /* UserNotifications.framework in Frameworks */,
 				5D2ABEE21D9B4AC100A3D896 /* libNotificarePushLib.a in Frameworks */,
+				5D2ABEE91D9BC74E00A3D896 /* StoreKit.framework in Frameworks */,
 				5DA034691D9A0C260045F82A /* CoreLocation.framework in Frameworks */,
 				5DA034671D9A0C1C0045F82A /* CoreData.framework in Frameworks */,
 			);
@@ -423,6 +424,7 @@
 		5DA033B01D9A0B6F0045F82A /* tvos */ = {
 			isa = PBXGroup;
 			children = (
+				5D2ABEEA1D9BC75700A3D896 /* tvos.entitlements */,
 				5D2ABE891D9B4AC100A3D896 /* notificare-push-lib-tvos-1.0.0 */,
 				5DA033B41D9A0B6F0045F82A /* AppDelegate.h */,
 				5DA033B51D9A0B6F0045F82A /* AppDelegate.m */,
@@ -465,7 +467,7 @@
 		5DA034651D9A0C1C0045F82A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5DA034801D9A0CA10045F82A /* StoreKit.framework */,
+				5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */,
 				5DA0347E1D9A0C9B0045F82A /* ImageIO.framework */,
 				5DA0347C1D9A0C960045F82A /* CFNetwork.framework */,
 				5DA0347A1D9A0C900045F82A /* Security.framework */,
@@ -552,6 +554,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = Y47BY73NFN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					5DA033C31D9A0B700045F82A = {
 						CreatedOnToolsVersion = 8.0;
@@ -764,6 +774,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = tvos/tvos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Y47BY73NFN;
 				INFOPLIST_FILE = tvos/Info.plist;
@@ -784,6 +795,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = tvos/tvos.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Y47BY73NFN;
 				INFOPLIST_FILE = tvos/Info.plist;

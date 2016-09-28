@@ -31,8 +31,8 @@ static os_log_t tvOSApp;
 
 -(void)notificarePushLib:(NotificarePushLib *)library onReady:(NSDictionary *)info{
 
-    //[[NotificarePushLib shared] registerForNotifications];
-    [[NotificarePushLib shared] registerForWebsockets];
+    [[NotificarePushLib shared] registerForNotifications];
+    //[[NotificarePushLib shared] registerForWebsockets];
     
 
 }
@@ -44,6 +44,7 @@ static os_log_t tvOSApp;
     //If you don't identify users you can just use this
     [[NotificarePushLib shared] registerDevice:deviceToken completionHandler:^(NSDictionary *info) {
         
+        [[NotificarePushLib shared] startLocationUpdates];
         
     } errorHandler:^(NSError *error) {
         //
