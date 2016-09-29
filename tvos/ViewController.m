@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "NSDate+TimeAgo.h"
 
+
+
 @interface ViewController ()
 
 @end
@@ -34,6 +36,7 @@
     [self showEmptyView];
     
 }
+
 
 
 -(void)reloadData{
@@ -127,19 +130,9 @@
     
 }
 
--(UIView*) preferredFocusedView {
-    
-    return self.view.subviews[0];
-    
-}
+
 
 -(BOOL) tableView:(UITableView *)tableView canFocusRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 1) {
-        
-        return false;
-        
-    }
     
     return true;
     
@@ -161,10 +154,46 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     NotificareDeviceInbox * item = (NotificareDeviceInbox *)[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
     
     [[NotificarePushLib shared] openInboxItem:item];
+     /*
     
+    UIViewController * rootView = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    
+
+    
+    UIViewController * view = [[UIViewController alloc] init];
+    
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:view];
+    
+    NSAttributedString* myHTMLString = [[NSAttributedString alloc] initWithData:[@"<p style='font-size:72px;'>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>\n\n<p>&nbsp;</p>\n\n<ul>\n\t<li>one&nbsp;</li>\n\t<li>two&nbsp;</li>\n\t<li>three</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>\n"
+dataUsingEncoding:NSUTF8StringEncoding] options:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType} documentAttributes:nil error:nil];
+    
+    UIView * myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.view.frame.size.width, view.view.frame.size.height)];
+    
+    
+    UITextView * textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, myView.frame.size.width, myView.frame.size.height)];
+    
+    [textView setDelegate:self];
+    
+    [textView setAttributedText:myHTMLString];
+    [[textView panGestureRecognizer] setAllowedTouchTypes:@[@(UITouchTypeIndirect)]];
+    [textView setSelectable:YES];
+    [textView setUserInteractionEnabled:YES];
+
+
+    [myView addSubview:textView];
+
+    [view setView:textView];
+
+    [rootView presentViewController:nav animated:YES completion:^(void){
+    
+    
+    }];
+*/
+
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -200,14 +229,6 @@
     }
 }
 
-
--(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    
-}
 
 
 -(void)viewWillAppear:(BOOL)animated{

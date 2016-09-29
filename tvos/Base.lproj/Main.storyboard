@@ -18,20 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="Hzy-aD-i5V">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-9A-64C">
                                 <frame key="frameInset" width="1920" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aoO-IO-SMe"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="h8x-8N-Gbx"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="rQR-ku-pxL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Qad-zY-tyd"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Hzy-aD-i5V" id="gty-Rn-9Ga"/>
+                        <outlet property="tableView" destination="WkK-9A-64C" id="7rA-6X-dOq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

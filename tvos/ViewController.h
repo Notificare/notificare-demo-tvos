@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NotificarePushLib.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) IBOutlet UITableViewController * tableViewController;
@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIView * loadingView;
 @property (nonatomic, strong) IBOutlet UIView * productView;
 @property (nonatomic, strong) IBOutlet UIImageView * productImage;
+@property (nonatomic, strong) IBOutlet UITextView * textView;
 
 
 @end

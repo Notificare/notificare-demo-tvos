@@ -10,7 +10,6 @@
 		5D2ABEE11D9B4AC100A3D896 /* DefaultTheme.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABE8B1D9B4AC100A3D896 /* DefaultTheme.bundle */; };
 		5D2ABEE21D9B4AC100A3D896 /* libNotificarePushLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2ABE8C1D9B4AC100A3D896 /* libNotificarePushLib.a */; };
 		5D2ABEE41D9B4AC100A3D896 /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDC1D9B4AC100A3D896 /* Notificare.plist */; };
-		5D2ABEE51D9B4AC100A3D896 /* NotificareManagedModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDD1D9B4AC100A3D896 /* NotificareManagedModels.bundle */; };
 		5D2ABEE61D9B4AC100A3D896 /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDE1D9B4AC100A3D896 /* NotificareTags.plist */; };
 		5D2ABEE91D9BC74E00A3D896 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */; };
 		5DA033B31D9A0B6F0045F82A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B21D9A0B6F0045F82A /* main.m */; };
@@ -20,7 +19,6 @@
 		5DA033BE1D9A0B700045F82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA033BD1D9A0B700045F82A /* Assets.xcassets */; };
 		5DA033C91D9A0B700045F82A /* tvosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033C81D9A0B700045F82A /* tvosTests.m */; };
 		5DA033D41D9A0B700045F82A /* tvosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033D31D9A0B700045F82A /* tvosUITests.m */; };
-		5DA034671D9A0C1C0045F82A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA034661D9A0C1C0045F82A /* CoreData.framework */; };
 		5DA034691D9A0C260045F82A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA034681D9A0C260045F82A /* CoreLocation.framework */; };
 		5DA0346B1D9A0C4A0045F82A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0346A1D9A0C4A0045F82A /* UserNotifications.framework */; };
 		5DA0346D1D9A0C500045F82A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0346C1D9A0C500045F82A /* MobileCoreServices.framework */; };
@@ -60,7 +58,6 @@
 		5D2ABE941D9B4AC100A3D896 /* NotificareApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareApp.h; sourceTree = "<group>"; };
 		5D2ABE961D9B4AC100A3D896 /* NotificareBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareBrowser.h; sourceTree = "<group>"; };
 		5D2ABE981D9B4AC100A3D896 /* NotificareCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareCustom.h; sourceTree = "<group>"; };
-		5D2ABE9A1D9B4AC100A3D896 /* NotificareBaseInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareBaseInboxViewController.h; sourceTree = "<group>"; };
 		5D2ABE9D1D9B4AC100A3D896 /* NotificareNetworkHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareNetworkHost.h; sourceTree = "<group>"; };
 		5D2ABE9E1D9B4AC100A3D896 /* NotificareNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareNetworkOperation.h; sourceTree = "<group>"; };
 		5D2ABE9F1D9B4AC100A3D896 /* NotificareNetworkReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareNetworkReachability.h; sourceTree = "<group>"; };
@@ -93,7 +90,6 @@
 		5D2ABEBD1D9B4AC100A3D896 /* NotificareContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareContent.h; sourceTree = "<group>"; };
 		5D2ABEBE1D9B4AC100A3D896 /* NotificareDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareDevice.h; sourceTree = "<group>"; };
 		5D2ABEBF1D9B4AC100A3D896 /* NotificareDeviceInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareDeviceInbox.h; sourceTree = "<group>"; };
-		5D2ABEC01D9B4AC100A3D896 /* NotificareManagedDeviceInbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareManagedDeviceInbox.h; sourceTree = "<group>"; };
 		5D2ABEC11D9B4AC100A3D896 /* NotificareNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareNotification.h; sourceTree = "<group>"; };
 		5D2ABEC21D9B4AC100A3D896 /* NotificarePass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificarePass.h; sourceTree = "<group>"; };
 		5D2ABEC31D9B4AC100A3D896 /* NotificareProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareProduct.h; sourceTree = "<group>"; };
@@ -102,7 +98,6 @@
 		5D2ABEC61D9B4AC100A3D896 /* NotificareUserPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareUserPreference.h; sourceTree = "<group>"; };
 		5D2ABEC71D9B4AC100A3D896 /* Notificare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notificare.h; sourceTree = "<group>"; };
 		5D2ABEC81D9B4AC100A3D896 /* NotificareActions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareActions.h; sourceTree = "<group>"; };
-		5D2ABEC91D9B4AC100A3D896 /* NotificareInboxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareInboxManager.h; sourceTree = "<group>"; };
 		5D2ABECA1D9B4AC100A3D896 /* NotificarePushLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificarePushLib.h; sourceTree = "<group>"; };
 		5D2ABECC1D9B4AC100A3D896 /* NSData+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hex.h"; sourceTree = "<group>"; };
 		5D2ABECD1D9B4AC100A3D896 /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
@@ -117,10 +112,10 @@
 		5D2ABED91D9B4AC100A3D896 /* NotificationType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationType.h; sourceTree = "<group>"; };
 		5D2ABEDB1D9B4AC100A3D896 /* NotificareRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareRate.h; sourceTree = "<group>"; };
 		5D2ABEDC1D9B4AC100A3D896 /* Notificare.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Notificare.plist; sourceTree = "<group>"; };
-		5D2ABEDD1D9B4AC100A3D896 /* NotificareManagedModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NotificareManagedModels.bundle; sourceTree = "<group>"; };
 		5D2ABEDE1D9B4AC100A3D896 /* NotificareTags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NotificareTags.plist; sourceTree = "<group>"; };
 		5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5D2ABEEA1D9BC75700A3D896 /* tvos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvos.entitlements; sourceTree = "<group>"; };
+		5D2ABEF11D9CAEDB00A3D896 /* NotificareWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareWebView.h; sourceTree = "<group>"; };
 		5DA033AE1D9A0B6F0045F82A /* tvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA033B21D9A0B6F0045F82A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA033B41D9A0B6F0045F82A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,7 +165,6 @@
 				5D2ABEE21D9B4AC100A3D896 /* libNotificarePushLib.a in Frameworks */,
 				5D2ABEE91D9BC74E00A3D896 /* StoreKit.framework in Frameworks */,
 				5DA034691D9A0C260045F82A /* CoreLocation.framework in Frameworks */,
-				5DA034671D9A0C1C0045F82A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +192,6 @@
 				5D2ABE8C1D9B4AC100A3D896 /* libNotificarePushLib.a */,
 				5D2ABE8E1D9B4AC100A3D896 /* Notificare */,
 				5D2ABEDC1D9B4AC100A3D896 /* Notificare.plist */,
-				5D2ABEDD1D9B4AC100A3D896 /* NotificareManagedModels.bundle */,
 				5D2ABEDE1D9B4AC100A3D896 /* NotificareTags.plist */,
 			);
 			path = "notificare-push-lib-tvos-1.0.0";
@@ -216,12 +209,10 @@
 			isa = PBXGroup;
 			children = (
 				5D2ABE901D9B4AC100A3D896 /* Actions */,
-				5D2ABE991D9B4AC100A3D896 /* Components */,
 				5D2ABE9B1D9B4AC100A3D896 /* Libraries */,
 				5D2ABEB81D9B4AC100A3D896 /* Models */,
 				5D2ABEC71D9B4AC100A3D896 /* Notificare.h */,
 				5D2ABEC81D9B4AC100A3D896 /* NotificareActions.h */,
-				5D2ABEC91D9B4AC100A3D896 /* NotificareInboxManager.h */,
 				5D2ABECA1D9B4AC100A3D896 /* NotificarePushLib.h */,
 				5D2ABECB1D9B4AC100A3D896 /* Shared */,
 				5D2ABED31D9B4AC100A3D896 /* Types */,
@@ -263,14 +254,6 @@
 				5D2ABE981D9B4AC100A3D896 /* NotificareCustom.h */,
 			);
 			path = Custom;
-			sourceTree = "<group>";
-		};
-		5D2ABE991D9B4AC100A3D896 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				5D2ABE9A1D9B4AC100A3D896 /* NotificareBaseInboxViewController.h */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		5D2ABE9B1D9B4AC100A3D896 /* Libraries */ = {
@@ -339,7 +322,6 @@
 				5D2ABEBD1D9B4AC100A3D896 /* NotificareContent.h */,
 				5D2ABEBE1D9B4AC100A3D896 /* NotificareDevice.h */,
 				5D2ABEBF1D9B4AC100A3D896 /* NotificareDeviceInbox.h */,
-				5D2ABEC01D9B4AC100A3D896 /* NotificareManagedDeviceInbox.h */,
 				5D2ABEC11D9B4AC100A3D896 /* NotificareNotification.h */,
 				5D2ABEC21D9B4AC100A3D896 /* NotificarePass.h */,
 				5D2ABEC31D9B4AC100A3D896 /* NotificareProduct.h */,
@@ -367,6 +349,7 @@
 		5D2ABED31D9B4AC100A3D896 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				5D2ABEF01D9CAEDB00A3D896 /* WebView */,
 				5D2ABED41D9B4AC100A3D896 /* Alert */,
 				5D2ABED61D9B4AC100A3D896 /* None */,
 				5D2ABED81D9B4AC100A3D896 /* NotificationDelegate.h */,
@@ -398,6 +381,14 @@
 				5D2ABEDB1D9B4AC100A3D896 /* NotificareRate.h */,
 			);
 			path = Rate;
+			sourceTree = "<group>";
+		};
+		5D2ABEF01D9CAEDB00A3D896 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				5D2ABEF11D9CAEDB00A3D896 /* NotificareWebView.h */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		5DA033A51D9A0B6F0045F82A = {
@@ -555,6 +546,9 @@
 						DevelopmentTeam = Y47BY73NFN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes.appletvos = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -604,7 +598,6 @@
 			files = (
 				5DA033BE1D9A0B700045F82A /* Assets.xcassets in Resources */,
 				5D2ABEE61D9B4AC100A3D896 /* NotificareTags.plist in Resources */,
-				5D2ABEE51D9B4AC100A3D896 /* NotificareManagedModels.bundle in Resources */,
 				5DA033BC1D9A0B700045F82A /* Main.storyboard in Resources */,
 				5D2ABEE11D9B4AC100A3D896 /* DefaultTheme.bundle in Resources */,
 				5D2ABEE41D9B4AC100A3D896 /* Notificare.plist in Resources */,

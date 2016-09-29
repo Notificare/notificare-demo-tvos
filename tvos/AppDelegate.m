@@ -65,8 +65,10 @@ static os_log_t tvOSApp;
 
     [[NotificarePushLib shared] handleNotification:userInfo forApplication:application completionHandler:^(NSDictionary * _Nonnull info) {
         //
+        completionHandler(UIBackgroundFetchResultNewData);
     } errorHandler:^(NSError * _Nonnull error) {
         //
+        completionHandler(UIBackgroundFetchResultNoData);
     }];
 }
 

@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "NotificarePushLib.h"
-#import <CoreLocation/CoreLocation.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NotificarePushLibDelegate, CLLocationManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NotificarePushLibDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
