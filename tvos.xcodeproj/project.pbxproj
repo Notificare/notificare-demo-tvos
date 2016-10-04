@@ -12,6 +12,7 @@
 		5D2ABEE41D9B4AC100A3D896 /* Notificare.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDC1D9B4AC100A3D896 /* Notificare.plist */; };
 		5D2ABEE61D9B4AC100A3D896 /* NotificareTags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D2ABEDE1D9B4AC100A3D896 /* NotificareTags.plist */; };
 		5D2ABEE91D9BC74E00A3D896 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */; };
+		5D6664091DA32CDC00ED3D94 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6664081DA32CDC00ED3D94 /* CoreMedia.framework */; };
 		5DA033B31D9A0B6F0045F82A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B21D9A0B6F0045F82A /* main.m */; };
 		5DA033B61D9A0B6F0045F82A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B51D9A0B6F0045F82A /* AppDelegate.m */; };
 		5DA033B91D9A0B6F0045F82A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA033B81D9A0B6F0045F82A /* ViewController.m */; };
@@ -31,6 +32,7 @@
 		5DA0347B1D9A0C900045F82A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0347A1D9A0C900045F82A /* Security.framework */; };
 		5DA0347D1D9A0C960045F82A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0347C1D9A0C960045F82A /* CFNetwork.framework */; };
 		5DA0347F1D9A0C9B0045F82A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA0347E1D9A0C9B0045F82A /* ImageIO.framework */; };
+		5DD61AB81DA31561003FB136 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD61AB71DA31561003FB136 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5D2ABEEA1D9BC75700A3D896 /* tvos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvos.entitlements; sourceTree = "<group>"; };
 		5D2ABEF11D9CAEDB00A3D896 /* NotificareWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareWebView.h; sourceTree = "<group>"; };
+		5D2ABEF81D9D96C100A3D896 /* NotificareImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareImage.h; sourceTree = "<group>"; };
+		5D6664081DA32CDC00ED3D94 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		5DA033AE1D9A0B6F0045F82A /* tvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA033B21D9A0B6F0045F82A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DA033B41D9A0B6F0045F82A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,6 +148,10 @@
 		5DA0347A1D9A0C900045F82A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5DA0347C1D9A0C960045F82A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5DA0347E1D9A0C9B0045F82A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		5DB3C0651DA14FF8008AB572 /* NotificareLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareLocation.h; sourceTree = "<group>"; };
+		5DB3C0661DA14FF8008AB572 /* NotificareMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareMap.h; sourceTree = "<group>"; };
+		5DD61AB61DA31556003FB136 /* NotificareVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificareVideo.h; sourceTree = "<group>"; };
+		5DD61AB71DA31561003FB136 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6664091DA32CDC00ED3D94 /* CoreMedia.framework in Frameworks */,
+				5DD61AB81DA31561003FB136 /* AVFoundation.framework in Frameworks */,
 				5DA0347F1D9A0C9B0045F82A /* ImageIO.framework in Frameworks */,
 				5DA0347D1D9A0C960045F82A /* CFNetwork.framework in Frameworks */,
 				5DA0347B1D9A0C900045F82A /* Security.framework in Frameworks */,
@@ -349,6 +359,9 @@
 		5D2ABED31D9B4AC100A3D896 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				5DD61AB51DA31556003FB136 /* Video */,
+				5DB3C0641DA14FF8008AB572 /* Map */,
+				5D2ABEF71D9D96C100A3D896 /* Image */,
 				5D2ABEF01D9CAEDB00A3D896 /* WebView */,
 				5D2ABED41D9B4AC100A3D896 /* Alert */,
 				5D2ABED61D9B4AC100A3D896 /* None */,
@@ -389,6 +402,14 @@
 				5D2ABEF11D9CAEDB00A3D896 /* NotificareWebView.h */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		5D2ABEF71D9D96C100A3D896 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5D2ABEF81D9D96C100A3D896 /* NotificareImage.h */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		5DA033A51D9A0B6F0045F82A = {
@@ -458,6 +479,8 @@
 		5DA034651D9A0C1C0045F82A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D6664081DA32CDC00ED3D94 /* CoreMedia.framework */,
+				5DD61AB71DA31561003FB136 /* AVFoundation.framework */,
 				5D2ABEE81D9BC74E00A3D896 /* StoreKit.framework */,
 				5DA0347E1D9A0C9B0045F82A /* ImageIO.framework */,
 				5DA0347C1D9A0C960045F82A /* CFNetwork.framework */,
@@ -474,6 +497,23 @@
 				5DA034661D9A0C1C0045F82A /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DB3C0641DA14FF8008AB572 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5DB3C0651DA14FF8008AB572 /* NotificareLocation.h */,
+				5DB3C0661DA14FF8008AB572 /* NotificareMap.h */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5DD61AB51DA31556003FB136 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				5DD61AB61DA31556003FB136 /* NotificareVideo.h */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
