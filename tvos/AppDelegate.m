@@ -29,6 +29,18 @@ static os_log_t tvOSApp;
     return YES;
 }
 
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    [[NotificarePushLib shared]  handleOpenURL:url];
+    os_log(tvOSApp, "%{public}@ - %{public}@", url, options);
+    return YES;
+}
+
+-(void)notificarePushLib:(NotificarePushLib *)library shouldPerformSelectorWithURL:(NSURL *)url{
+    
+    os_log(tvOSApp, "%{public}@", url);
+    
+}
+
 -(void)notificarePushLib:(NotificarePushLib *)library onReady:(NSDictionary *)info{
 
     [[NotificarePushLib shared] registerForNotifications];
