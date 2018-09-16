@@ -12,119 +12,136 @@
 
 @end
 
+static os_log_t tvOSApp;
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[NotificarePushLib shared] initializeWithKey:nil andSecret:nil];
+    tvOSApp = os_log_create("re.notifica.tvos", "MyApp");
+
+    
     [[NotificarePushLib shared] launch];
     [[NotificarePushLib shared] setDelegate:self];
-    
-    [self setPeripheralManager:[[CBPeripheralManager alloc] init]];
-    [[self peripheralManager] setDelegate:self];
-    
+    [[NotificarePushLib shared] handleOptions:launchOptions];
     
     return YES;
 }
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-    [[NotificarePushLib shared] handleOpenURL:url withOptions:options];
+    [[NotificarePushLib shared]  handleOpenURL:url];
+    os_log(tvOSApp, "%{public}@ - %{public}@", url, options);
     return YES;
 }
 
 -(void)notificarePushLib:(NotificarePushLib *)library shouldPerformSelectorWithURL:(NSURL *)url{
     
+    os_log(tvOSApp, "%{public}@", url);
     
 }
 
 -(void)notificarePushLib:(NotificarePushLib *)library onReady:(NSDictionary *)info{
 
     [[NotificarePushLib shared] registerForNotifications];
-
-}
-
--(void)notificarePushLib:(NotificarePushLib *)library didRegisterDevice:(nonnull NotificareDevice *)device {
-    NSLog(@"%@", [device deviceID]);
+    //[[NotificarePushLib shared] registerForWebsockets];
     
-    [[NotificarePushLib shared] startLocationUpdates];
+
 }
 
-
--(void)notificarePushLib:(NotificarePushLib *)library didReceiveRemoteNotificationInForeground:(nonnull NotificareNotification *)notification withController:(id _Nullable)controller {
-    NSLog(@"didReceiveRemoteNotificationInForeground %@", [notification notificationMessage]);
-}
-
--(void)notificarePushLib:(NotificarePushLib *)library didReceiveRemoteNotificationInBackground:(nonnull NotificareNotification *)notification withController:(id _Nullable)controller{
-    NSLog(@"didReceiveRemoteNotificationInBackground %@", [notification notificationMessage]);
+#pragma APNS Delegates
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
-    [[NotificarePushLib shared] presentNotification:notification inNavigationController:navController withController:controller];
-}
-
--(void)notificarePushLib:(NotificarePushLib *)library didLoadInbox:(nonnull NSArray<NotificareDeviceInbox *> *)items{
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"inboxReady" object:nil];
-    
-}
-
-- (void)notificarePushLib:(NotificarePushLib *)library didUpdateBadge:(int)badge{
-    
-}
-
--(void)notificarePushLib:(NotificarePushLib *)library didUpdateLocations:(nonnull NSArray<NotificareLocation *> *)locations {
-    NSLog(@"didUpdateLocations %@", locations);
-}
-
-/**
- * Advertise as a beacon
- * This is simply an example and is not part of the Notificare implementation
- */
-- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral{
-    
-    if (self.peripheralManager.state == CBManagerStatePoweredOn){
+    os_log(tvOSApp, "didRegisterForRemoteNotificationsWithDeviceToken");
+    //If you don't identify users you can just use this
+    [[NotificarePushLib shared] registerDevice:deviceToken completionHandler:^(NSDictionary *info) {
         
-        /*
-        NSDictionary *beacon1 = [self beaconDataWithUUID:[[NSUUID alloc] initWithUUIDString:@"f7826da6-4fa2-4e98-8024-bc5b71e0893e"]
-                                                           major:909
-                                                           minor:11123
-                                                   measuredPower:-59];
+        [[NotificarePushLib shared] startLocationUpdates];
         
-        [[self peripheralManager] startAdvertising:beacon1];
-        */
+    } errorHandler:^(NSError *error) {
+        //
+        //  [self registerForAPNS];
         
-        NSDictionary *beacon2 = [self beaconDataWithUUID:[[NSUUID alloc] initWithUUIDString:@"f7826da6-4fa2-4e98-8024-bc5b71e0893e"]
-                                                           major:909
-                                                           minor:26594
-                                                   measuredPower:-59];
-        
-        [[self peripheralManager] startAdvertising:beacon2];
-        
-    }
+    }];
+    
+    
 }
 
-- (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(nullable NSError *)error {
-    if (error) {
-        NSLog(@"There was an error advertising: %@", error);
-    }
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    
+    os_log(tvOSApp, "didFailToRegisterForRemoteNotificationsWithError %{public}@", error);
+
 }
 
-- (NSDictionary *)beaconDataWithUUID:(NSUUID *)uuid major:(uint16_t)major minor:(uint16_t)minor measuredPower:(NSInteger)measuredPower {
-    static NSString *iBeaconKey = @"kCBAdvDataAppleBeaconKey";
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
+
+    [[NotificarePushLib shared] handleNotification:userInfo forApplication:application completionHandler:^(NSDictionary * _Nonnull info) {
+        //
+        completionHandler(UIBackgroundFetchResultNewData);
+    } errorHandler:^(NSError * _Nonnull error) {
+        //
+        completionHandler(UIBackgroundFetchResultNoData);
+    }];
+}
+
+-(void)notificarePushLib:(NotificarePushLib *)library didUpdateBadge:(int)badge{
     
-    unsigned char advertisingData[21] = { 0 };
-    [uuid getUUIDBytes:(unsigned char *)&advertisingData];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"incomingNotification" object:nil];
+
+}
+
+
+#pragma WebSockets Delegates
+- (void)notificarePushLib:(NotificarePushLib *)library didRegisterForWebsocketsNotifications:(NSString *)uuid {
     
-    advertisingData[16] = (unsigned char)(major >> 8);
-    advertisingData[17] = (unsigned char)(major & 255);
-    advertisingData[18] = (unsigned char)(minor >> 8);
-    advertisingData[19] = (unsigned char)(minor & 255);
-    advertisingData[20] = measuredPower;
+    //If you don't identify users you can just use this
+    [[NotificarePushLib shared] registerDeviceForWebsockets:uuid completionHandler:^(NSDictionary *info) {
+        
+        
+        
+    } errorHandler:^(NSError *error) {
+        //
+        //  [self registerForAPNS];
+        
+    }];
     
-    NSData *data = [NSData dataWithBytes:advertisingData length:sizeof(advertisingData)];
+}
+
+
+- (void)notificarePushLib:(NotificarePushLib *)library didReceiveWebsocketNotification:(NSDictionary *)info {
     
-    return @{ iBeaconKey : data };
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"incomingNotification" object:nil];
+    
+    UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+
+    content.badge = @([[UIApplication sharedApplication] applicationIconBadgeNumber] + 1);
+ 
+    UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger
+                                                  triggerWithTimeInterval:2.f repeats:NO];
+    UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"TwoSeconds"
+                                                                          content:content trigger:trigger];
+  
+    [[[NotificarePushLib shared] notificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"add NotificationRequest succeeded!");
+        }
+    }];
+    
+}
+
+- (void)notificarePushLib:(NotificarePushLib *)library didFailToRegisterWebsocketNotifications:(nonnull NSError *)error{
+    NSLog(@"didFailToRegisterWebsocketNotifications %@", error);
+}
+
+- (void)notificarePushLib:(NotificarePushLib *)library didCloseWebsocketConnection:(nonnull NSString *)reason{
+NSLog(@"didCloseWebsocketConnection %@", reason);
+}
+
+
+- (void)notificarePushLib:(NotificarePushLib *)library didUpdateLocations:(nonnull NSArray *)locations{
+
+    os_log(tvOSApp, "didUpdateLocations %{public}@", locations);
+    
 }
 
 

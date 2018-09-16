@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "NotificarePushLib.h"
-#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, NotificarePushLibDelegate,CBPeripheralManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NotificarePushLibDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) CBPeripheralManager *peripheralManager;
 
 
 @end
