@@ -51,6 +51,13 @@
     [[NotificarePushLib shared] startLocationUpdates];
 }
 
+-(void)notificarePushLib:(NotificarePushLib *)library didChangeNotificationSettings:(BOOL)granted{
+    if (granted) {
+       NSLog(@"didChangeNotificationSettings GRANTED");
+    } else {
+       NSLog(@"didChangeNotificationSettings NOT GRANTED");
+    }
+}
 
 -(void)notificarePushLib:(NotificarePushLib *)library didReceiveRemoteNotificationInForeground:(nonnull NotificareNotification *)notification withController:(id _Nullable)controller {
     NSLog(@"didReceiveRemoteNotificationInForeground %@", [notification notificationMessage]);

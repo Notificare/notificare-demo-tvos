@@ -88,7 +88,11 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
 /*
  * Push Delegates
  */
-
+/*!
+ * @brief Optional. This delegate method will be triggered when changes to notification settings occur.
+ * @param granted A boolean representing if users granted authorization to post user notifications
+ */
+- (void)notificarePushLib:(NotificarePushLib *)library didChangeNotificationSettings:(BOOL)granted;
 /*!
  * @brief Optional. This delegate method will be triggered when a launch URL key is detected.
  * @param launchURL A NSURL object containing the url received on launch
@@ -298,7 +302,16 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
 @property (nonatomic, assign) id <NotificarePushLibDelegate> delegate;
 
 /*!
- *  @abstract Presentation Options for iOS 10 and higher
+ *  @abstract Authorization Options for tvOS 10 and higher
+ *  @discussion
+ *  A UNAuthorizationOptions holds constants indicating which authorization options should be used. Possible values are: UNAuthorizationOptionAlert, UNAuthorizationOptionSound, UNAuthorizationOptionBadge, UNAuthorizationOptionProvisional, UNAuthorizationOptionProvidesAppNotificationSettings and UNAuthorizationOptionCriticalAlert. If none is provided it will default to UNAuthorizationOptionAlert, UNAuthorizationOptionSound, UNAuthorizationOptionBadge.
+ *  @property presentationOptions
+ *
+ */
+@property (nonatomic,assign) UNAuthorizationOptions authorizationOptions;
+
+/*!
+ *  @abstract Presentation Options for tvOS
  *  @discussion
  *  A UNNotificationPresentationOptions holds constants indicating how to handle notifications when app is active. Possible values are: UNNotificationPresentationOptionAlert, UNNotificationPresentationOptionBadge, UNNotificationPresentationOptionSound or UNNotificationPresentationOptionNone. If none is provided it will default to UNNotificationPresentationOptionNone.
  *  @property presentationOptions
@@ -307,7 +320,7 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
 @property (nonatomic,assign) UNNotificationPresentationOptions presentationOptions;
 
 /*!
- *  @abstract User Notification Center for iOS 10 and higher
+ *  @abstract User Notification Center for tvOS
  *  @discussion
  *    A UNUserNotificationCenter object holds a reference to the device notification center.
  *  @property userNotificationCenter
@@ -546,6 +559,14 @@ typedef void (^NotificareCompletionBlock)(id _Nullable response , NSError * _Nul
  *  @param notification A NSString/NotificareDeviceInbox/NSDictionary object
  */
 - (void)fetchNotification:(id)notification completionHandler:(NotificareCompletionBlock)completionBlock;
+/*!
+ *  @abstract Get a controller for a NotificareNotification object
+ *
+ *  @discussion
+ *  Helper method to get a controller for a NotificareNotification object on-demand.
+ *  @param notification A NotificareNotification object
+ */
+- (id)controllerForNotification:(NotificareNotification *)notification;
 /*!
  *  @abstract Clear a Private Notification
  *

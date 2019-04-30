@@ -59,6 +59,7 @@ typedef void (^ErrorReplyBlock)(NSError * error);
 
 - (void)notificarePush:(NotificarePush *)notificarePush didFailToExecuteAction:(NotificareAction *)action withError:(NSError *)error;
 
+- (void)notificarePush:(NotificarePush *)notificarePush didChangeNotificationSettings:(BOOL)granted;
 
 @end
 
@@ -67,6 +68,7 @@ typedef void (^ErrorReplyBlock)(NSError * error);
 
 @property (nonatomic, assign) id<NotificarePushDelegate> notificarePushDelegate;
 @property (strong, nonatomic) UNUserNotificationCenter * notificationCenter;
+@property (nonatomic,assign) UNAuthorizationOptions authorizationOptions;
 @property (nonatomic,assign) UNNotificationPresentationOptions notificationPresentationOptions;
 @property (strong, nonatomic) Notificare * notificare;
 @property (strong, nonatomic) NotificareActions * notificareActions;

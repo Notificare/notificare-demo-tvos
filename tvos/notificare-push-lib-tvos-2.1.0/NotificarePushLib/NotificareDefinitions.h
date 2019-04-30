@@ -11,7 +11,7 @@
 #ifndef NotificareDefinitions_h
 #define NotificareDefinitions_h
 
-#define kSDKVersion @"2.0.0"
+#define kSDKVersion @"2.1.0"
 #define kOSVersion [[UIDevice currentDevice] systemVersion]
 #define kDaysInterval 1
 #define kLocationSessionBackoffDistance 7.0
