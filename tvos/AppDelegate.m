@@ -21,13 +21,36 @@
     [[NotificarePushLib shared] initializeWithKey:nil andSecret:nil];
     [[NotificarePushLib shared] launch];
     [[NotificarePushLib shared] setDelegate:self];
+    //[[NotificarePushLib shared] didFinishLaunchingWithOptions:launchOptions];
     
+//    if (@available(tvOS 12.0, *)) {
+//        [[NotificarePushLib shared] setAuthorizationOptions:UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound + UNAuthorizationOptionProvidesAppNotificationSettings + UNAuthorizationOptionProvisional];
+//    } else {
+//        [[NotificarePushLib shared] setAuthorizationOptions:UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound];
+//    }
+//
+//    [[NotificarePushLib shared] setPresentationOptions:UNNotificationPresentationOptionAlert + UNNotificationPresentationOptionSound + UNNotificationPresentationOptionBadge];
+//
     [self setPeripheralManager:[[CBPeripheralManager alloc] init]];
     [[self peripheralManager] setDelegate:self];
     
     
     return YES;
 }
+//
+//-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
+//    [[NotificarePushLib shared] didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+//}
+//
+//-(void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
+//    [[NotificarePushLib shared] didReceiveRemoteNotification:userInfo completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
+//        if (!error) {
+//            completionHandler(UIBackgroundFetchResultNewData);
+//        } else {
+//            completionHandler(UIBackgroundFetchResultNoData);
+//        }
+//    }];
+//}
 
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
     [[NotificarePushLib shared] handleOpenURL:url withOptions:options];
@@ -39,14 +62,18 @@
     
 }
 
+-(void)notificarePushLib:(NotificarePushLib *)library didFailToRegisterForNotificationsWithError:(nonnull NSError *)error{
+    NSLog(@"%@", error);
+}
+
 -(void)notificarePushLib:(NotificarePushLib *)library onReady:(NSDictionary *)info{
 
     [[NotificarePushLib shared] registerForNotifications];
-
+    
 }
 
 -(void)notificarePushLib:(NotificarePushLib *)library didRegisterDevice:(nonnull NotificareDevice *)device {
-    NSLog(@"%@", [device deviceID]);
+    NSLog(@"didRegisterDevice %@", [device deviceID]);
     
     [[NotificarePushLib shared] startLocationUpdates];
 }
@@ -78,6 +105,11 @@
 
 - (void)notificarePushLib:(NotificarePushLib *)library didUpdateBadge:(int)badge{
     
+}
+
+
+-(void)notificarePushLib:(NotificarePushLib *)library didFailToStartLocationServiceWithError:(nonnull NSError *)error{
+    NSLog(@"didFailToStartLocationServiceWithError %@", error);
 }
 
 -(void)notificarePushLib:(NotificarePushLib *)library didUpdateLocations:(nonnull NSArray<NotificareLocation *> *)locations {
