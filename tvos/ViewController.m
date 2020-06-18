@@ -284,10 +284,10 @@
 
         [[[NotificarePushLib shared] inboxManager] removeFromInbox:item completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
             if (!error) {
-                [tableView beginUpdates];
-                [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-                [[[self navSections] objectAtIndex:0] removeObject:item];
-                [tableView endUpdates];
+//                [tableView beginUpdates];
+//                [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//                [[[self navSections] objectAtIndex:0] removeObject:item];
+//                [tableView endUpdates];
             }
         }];
         
