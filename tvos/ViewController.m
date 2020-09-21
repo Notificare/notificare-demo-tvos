@@ -252,16 +252,12 @@
     
     NotificareDeviceInbox * item = (NotificareDeviceInbox *)[[[self navSections] objectAtIndex:[indexPath section]] objectAtIndex:[indexPath row]];
     
-    [item setOpened:YES];
-    [[self tableView] reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    
     [[[NotificarePushLib shared] inboxManager] openInboxItem:item completionHandler:^(id  _Nullable response, NSError * _Nullable error) {
         if (!error) {
-            
             [[NotificarePushLib shared] presentInboxItem:item inNavigationController:[self navigationController] withController:response];
-            
         }
     }];
+    
     
 }
 
