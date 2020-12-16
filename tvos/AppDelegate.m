@@ -21,7 +21,13 @@
     [[NotificarePushLib shared] initializeWithKey:nil andSecret:nil];
     [[NotificarePushLib shared] launch];
     [[NotificarePushLib shared] setDelegate:self];
+    
+    // Uncomment if you disable App Delegate proxy
     //[[NotificarePushLib shared] didFinishLaunchingWithOptions:launchOptions];
+    
+    // Uncomment if you disable UNUserNotificationCenter delegate
+    //    UNUserNotificationCenter * center = [UNUserNotificationCenter currentNotificationCenter];
+    //    [center setDelegate:self];
     
 //    if (@available(tvOS 12.0, *)) {
 //        [[NotificarePushLib shared] setAuthorizationOptions:UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound + UNAuthorizationOptionProvidesAppNotificationSettings + UNAuthorizationOptionProvisional];
@@ -29,7 +35,11 @@
 //        [[NotificarePushLib shared] setAuthorizationOptions:UNAuthorizationOptionAlert + UNAuthorizationOptionBadge + UNAuthorizationOptionSound];
 //    }
 //
-//    [[NotificarePushLib shared] setPresentationOptions:UNNotificationPresentationOptionAlert + UNNotificationPresentationOptionSound + UNNotificationPresentationOptionBadge];
+    if (@available(tvOS 14.0, *)) {
+        [[NotificarePushLib shared] setPresentationOptions:UNNotificationPresentationOptionBanner];
+    } else {
+        [[NotificarePushLib shared] setPresentationOptions:UNNotificationPresentationOptionAlert];
+    }
 //
     [self setPeripheralManager:[[CBPeripheralManager alloc] init]];
     [[self peripheralManager] setDelegate:self];
@@ -37,7 +47,21 @@
     
     return YES;
 }
+
+// Uncomment if you disable UNUserNotificationCenter delegate
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+//    [[NotificarePushLib shared] willPresentNotification:notification withCompletionHandler:^(UNNotificationPresentationOptions options) {
+//        completionHandler(options);
+//    }];
+//}
 //
+//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+//    [[NotificarePushLib shared] didReceiveNotificationResponse:response withCompletionHandler:^{
+//        completionHandler();
+//    }];
+//}
+
+// Uncomment if you disable App Delegate proxy
 //-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
 //    [[NotificarePushLib shared] didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 //}
